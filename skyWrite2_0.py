@@ -20,10 +20,10 @@ pts = deque()
 color = deque()
 
 #Saving the video
-size = (int(cap.get(3)),int(cap.get(4)))
-recording = cv2.VideoWriter('skywrite2.avi',  
-                         cv2.VideoWriter_fourcc(*'MJPG'), 
-                         10, size) 
+#size = (int(cap.get(3)),int(cap.get(4)))
+#recording = cv2.VideoWriter('skywrite2.avi',  
+                         #cv2.VideoWriter_fourcc(*'MJPG'), 
+                         #10, size) 
 
 # For static images:
 IMAGE_FILES = []
@@ -176,10 +176,10 @@ with mp_hands.Hands(
     except:
         continue
     cv2.imshow('MediaPipe Hands', image)
-    recording.write(image)
+    #for saving the video
+    #recording.write(image)
     if cv2.waitKey(1) & 0xFF == ord('q'):
       break
-#print(image.shape)    
 cap.release()
-recording.release() 
+#recording.release() 
 cv2.destroyAllWindows()
